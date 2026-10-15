@@ -40,72 +40,72 @@ Display the following options:
 
 Step 3: Book Ticket
 
-Create a new node dynamically.
+•Create a new node dynamically.
 
-Accept the ticket number, passenger name, and destination.
+•Accept the ticket number, passenger name, and destination.
 
-If the linked list is empty, assign the new node to head.
+•If the linked list is empty, assign the new node to head.
 
-Otherwise, traverse to the last node and insert the new node.
+•Otherwise, traverse to the last node and insert the new node.
 
-Display the booking confirmation message.
+•Display the booking confirmation message.
 
 
 Step 4: Display Tickets
 
-Check whether the linked list is empty.
+•Check whether the linked list is empty.
 
-If empty, display "No tickets booked."
+•If empty, display "No tickets booked."
 
-Otherwise, traverse the list from head to NULL.
+•Otherwise, traverse the list from head to NULL.
 
-Display the details of each ticket.
+•Display the details of each ticket.
 
 
 Step 5: Search Ticket
 
-Accept the ticket number from the user.
+•Accept the ticket number from the user.
 
-Traverse the linked list and compare each node's ticket number with the given number.
+•Traverse the linked list and compare each node's ticket number with the given number.
 
-If a match is found, display the ticket details.
+•If a match is found, display the ticket details.
 
-Otherwise, display "Ticket not Found."
+•Otherwise, display "Ticket not Found."
 
 
 Step 6: Cancel Ticket
 
-Accept the ticket number to cancel.
+•Accept the ticket number to cancel.
 
-Search for the corresponding node.
+•Search for the corresponding node.
 
-Update the pointers to remove the node from the linked list.
+•Update the pointers to remove the node from the linked list.
 
-Release the node's memory using delete.
+•Release the node's memory using delete.
 
-Display the cancellation status.
+•Display the cancellation status.
 
 
 Step 7: Exit
 
-If the user selects Exit, terminate the program. Otherwise, display the menu again.
+•If the user selects Exit, terminate the program. Otherwise, display the menu again.
 
 
 ---
 
 2. Time Complexity Analysis
 
-Let n represent the total number of booked tickets in the linked list.
+•Let n represent the total number of booked tickets in the linked list.
 
-Operation	Time Complexity	Explanation
+•Operation	Time Complexity	Explanation
 
-Book Ticket	O(n)	Traverses the list to reach the last node.
+•Book Ticket	O(n)	Traverses the list to reach the last node.
 Display Tickets	O(n)	Visits every node.
 Search Ticket	O(n)	May check every node.
 Cancel Ticket	O(n)	May traverse the entire list to find the ticket.
 
 
-Space Complexity: O(n)
+**Space Complexity: O(n)
 
 Explanation: Each ticket requires one node, so the memory required increases with the number of tickets.
 
@@ -114,42 +114,42 @@ Explanation: Each ticket requires one node, so the memory required increases wit
 
 3. Working of the Project
 
-The Ticket Booking System is a menu-driven C++ application that uses a singly linked list to manage ticket details.
+•The Ticket Booking System is a menu-driven C++ application that uses a singly linked list to manage ticket details.
 
-Each node stores:
+•Each node stores:
 
-Ticket Number
+•Ticket Number
 
-Passenger Name
+•Passenger Name
 
-Destination
+•Destination
 
-Pointer to the Next Node
-
-
-Example
-
-Suppose two tickets are booked.
-
-Ticket 1
-
-Ticket Number: 101
-
-Passenger Name: Sonal
-
-Destination: Pune
+•Pointer to the Next Node
 
 
-Ticket 2
+•Example
 
-Ticket Number: 102
+•Suppose two tickets are booked.
 
-Passenger Name: Rahul
+•Ticket 1
 
-Destination: Mumbai
+•Ticket Number: 101
+
+•Passenger Name: Sonal
+
+•Destination: Pune
 
 
-The linked list will look like this:
+•Ticket 2
+
+•Ticket Number: 102
+
+•Passenger Name: Rahul
+
+•Destination: Mumbai
+
+
+•The linked list will look like this:
 
 HEAD
    |
@@ -162,9 +162,9 @@ HEAD
                                     v
                                    NULL
 
-The user can display both tickets, search for a particular ticket, or cancel an existing ticket.
+•The user can display both tickets, search for a particular ticket, or cancel an existing ticket.
 
-When ticket number 101 is cancelled, the resulting linked list is:
+•When ticket number 101 is cancelled, the resulting linked list is:
 
 HEAD
    |
@@ -177,7 +177,7 @@ HEAD
           v
          NULL
 
-Thus, the linked list is updated by changing pointers and deleting the cancelled node.
+•Thus, the linked list is updated by changing pointers and deleting the cancelled node.
 
 
 ---
@@ -200,7 +200,7 @@ Enter Destination: Pune
 
 Ticket booked Successfully!
 
-Display Tickets
+•Display Tickets
 
 Enter your Choice: 2
 
@@ -210,7 +210,7 @@ Ticket No: 101
 Passenger: Sonal
 Destination: Pune
 
-Search Ticket
+•Search Ticket
 
 Enter your Choice: 3
 
@@ -220,7 +220,7 @@ Ticket Found!
 Passenger: Sonal
 Destination: Pune
 
-Cancel Ticket
+•Cancel Ticket
 
 Enter your Choice: 4
 
@@ -228,7 +228,7 @@ Enter Ticket Number to cancel: 101
 
 Ticket cancelled Successfully!
 
-Exit
+•Exit
 
 Enter your Choice: 5
 
