@@ -11,19 +11,20 @@ struct Node
 };
 
 Node* head = NULL;
+int nextTicketNo = 1;
 
+// Function to book a ticket
 void bookTicket()
 {
     Node* newNode = new Node();
 
-    cout << "\nEnter Ticket Number: ";
-    cin >> newNode->ticketNo;
+    newNode->ticketNo = nextTicketNo++;
 
-    cout << "Enter Passenger Name: ";
-    cin >> newNode->name;
+    cout << "\nEnter Passenger Name: ";
+    getline(cin >> ws, newNode->name);
 
     cout << "Enter Destination: ";
-    cin >> newNode->destination;
+    getline(cin >> ws, newNode->destination);
 
     newNode->next = NULL;
 
@@ -43,37 +44,47 @@ void bookTicket()
         temp->next = newNode;
     }
 
-    cout << "\nTicket booked Successfully!\n";
+    cout << "\nTicket Booked Successfully!\n";
+    cout << "Your Ticket Number: "
+         << newNode->ticketNo << endl;
 }
 
+// Function to display all tickets
 void displayTickets()
 {
     if (head == NULL)
     {
-        cout << "\nNo tickets booked.\n";
+        cout << "\nNo Tickets Booked.\n";
         return;
     }
 
     Node* temp = head;
 
-    cout << "\n----- Ticket Details -----\n";
+    cout << "\n===== BOOKED TICKETS =====\n";
 
     while (temp != NULL)
     {
-        cout << "Ticket No: " << temp->ticketNo << endl;
-        cout << "Passenger: " << temp->name << endl;
-        cout << "Destination: " << temp->destination << endl;
-        cout << "--------------------------\n";
+        cout << "\nTicket Number: "
+             << temp->ticketNo << endl;
+
+        cout << "Passenger Name: "
+             << temp->name << endl;
+
+        cout << "Destination: "
+             << temp->destination << endl;
+
+        cout << "-------------------------\n";
 
         temp = temp->next;
     }
 }
 
+// Function to search for a ticket
 void searchTicket()
 {
     int ticketNo;
 
-    cout << "\nEnter Ticket Number to search: ";
+    cout << "\nEnter Ticket Number to Search: ";
     cin >> ticketNo;
 
     Node* temp = head;
@@ -83,22 +94,31 @@ void searchTicket()
         if (temp->ticketNo == ticketNo)
         {
             cout << "\nTicket Found!\n";
-            cout << "Passenger: " << temp->name << endl;
-            cout << "Destination: " << temp->destination << endl;
+
+            cout << "Ticket Number: "
+                 << temp->ticketNo << endl;
+
+            cout << "Passenger Name: "
+                 << temp->name << endl;
+
+            cout << "Destination: "
+                 << temp->destination << endl;
+
             return;
         }
 
         temp = temp->next;
     }
 
-    cout << "\nTicket not Found.\n";
+    cout << "\nTicket Not Found.\n";
 }
 
+// Function to cancel a ticket
 void cancelTicket()
 {
     int ticketNo;
 
-    cout << "\nEnter Ticket Number to cancel: ";
+    cout << "\nEnter Ticket Number to Cancel: ";
     cin >> ticketNo;
 
     Node* temp = head;
@@ -119,7 +139,7 @@ void cancelTicket()
 
             delete temp;
 
-            cout << "\nTicket cancelled Successfully!\n";
+            cout << "\nTicket Cancelled Successfully!\n";
             return;
         }
 
@@ -127,7 +147,20 @@ void cancelTicket()
         temp = temp->next;
     }
 
-    cout << "\nTicket not Found.\n";
+    cout << "\nTicket Not Found.\n";
+}
+
+// Function to free allocated memory
+void freeTickets()
+{
+    Node* temp;
+
+    while (head != NULL)
+    {
+        temp = head;
+        head = head->next;
+        delete temp;
+    }
 }
 
 int main()
@@ -136,15 +169,14 @@ int main()
 
     do
     {
-        cout << "\n===== TICKET BOOKING SYSTEM =====";
+        cout << "\n===== TICKET BOOKING SYSTEM =====\n";
+        cout << "1. Book Ticket\n";
+        cout << "2. Display Tickets\n";
+        cout << "3. Search Ticket\n";
+        cout << "4. Cancel Ticket\n";
+        cout << "5. Exit\n";
 
-        cout << "\n1. Book Ticket";
-        cout << "\n2. Display Tickets";
-        cout << "\n3. Search Ticket";
-        cout << "\n4. Cancel Ticket";
-        cout << "\n5. Exit";
-
-        cout << "\n\nEnter your Choice: ";
+        cout << "\nEnter Your Choice: ";
         cin >> choice;
 
         switch (choice)
@@ -166,14 +198,17 @@ int main()
                 break;
 
             case 5:
-                cout << "\nThank you!\n";
+                cout << "\nThank You for Using "
+                     << "Ticket Booking System!\n";
                 break;
 
             default:
-                cout << "\nInvalid Choice!\n";
+                cout << "\nInvalid Choice! Try Again.\n";
         }
 
     } while (choice != 5);
+
+    freeTickets();
 
     return 0;
 }
