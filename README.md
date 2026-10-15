@@ -1,221 +1,121 @@
-# Ticket Booking System Using Linked List
-## Description 
-This Project is Ticket Booking System developed using C++ and Linked List.
 
-## Data Structure Used 
--Linked List
 
-## Features 
--Book a Ticket
--Display Booked Tickets 
--Cancel a Ticket
--Search Ticket
-
-
-1. Algorithm
-
-Step 1: Start
-
-Start the program and initialize the head pointer to NULL.
-
-Step 2: Display Menu
-
-Display the following options:
-
-1. Book Ticket
-
-
-2. Display Tickets
-
-
-3. Search Ticket
-
-
-4. Cancel Ticket
-
-
-5. Exit
-
-
-
-Step 3: Book Ticket
-
-•Create a new node dynamically.
-
-•Accept the ticket number, passenger name, and destination.
-
-•If the linked list is empty, assign the new node to head.
-
-•Otherwise, traverse to the last node and insert the new node.
-
-•Display the booking confirmation message.
-
-
-Step 4: Display Tickets
-
-•Check whether the linked list is empty.
-
-•If empty, display "No tickets booked."
-
-•Otherwise, traverse the list from head to NULL.
-
-•Display the details of each ticket.
-
-
-Step 5: Search Ticket
-
-•Accept the ticket number from the user.
-
-•Traverse the linked list and compare each node's ticket number with the given number.
-
-•If a match is found, display the ticket details.
-
-•Otherwise, display "Ticket not Found."
-
-
-Step 6: Cancel Ticket
-
-•Accept the ticket number to cancel.
-
-•Search for the corresponding node.
-
-•Update the pointers to remove the node from the linked list.
-
-•Release the node's memory using delete.
-
-•Display the cancellation status.
-
-
-Step 7: Exit
-
-•If the user selects Exit, terminate the program. Otherwise, display the menu again.
-
-
----
-
-2. Time Complexity Analysis
-
-•Let n represent the total number of booked tickets in the linked list.
-
-•Operation	Time Complexity	Explanation
-
-•Book Ticket	O(n)	Traverses the list to reach the last node.
-Display Tickets	O(n)	Visits every node.
-Search Ticket	O(n)	May check every node.
-Cancel Ticket	O(n)	May traverse the entire list to find the ticket.
-
-
-**Space Complexity: O(n)
-
-Explanation: Each ticket requires one node, so the memory required increases with the number of tickets.
-
-
----
-
-3. Working of the Project
-
-•The Ticket Booking System is a menu-driven C++ application that uses a singly linked list to manage ticket details.
-
-•Each node stores:
-
-•Ticket Number
-
-•Passenger Name
-
-•Destination
-
-•Pointer to the Next Node
-
-
-•Example
-
-•Suppose two tickets are booked.
-
-•Ticket 1
-
-•Ticket Number: 101
-
-•Passenger Name: Sonal
-
-•Destination: Pune
-
-
-•Ticket 2
-
-•Ticket Number: 102
-
-•Passenger Name: Rahul
-
-•Destination: Mumbai
-
-•The user can display both tickets, search for a particular ticket, or cancel an existing ticket.
-
-•When ticket number 101 is cancelled
-
-•Thus, the linked list is updated by changing pointers and deleting the cancelled node.
-
-
----
-
-4. Sample Output
-
-===== TICKET BOOKING SYSTEM =====
-
-1. Book Ticket
-2. Display Tickets
-3. Search Ticket
-4. Cancel Ticket
-5. Exit
-
-Enter your Choice: 1
-
-Enter Ticket Number: 101
-Enter Passenger Name: Sonal
-Enter Destination: Pune
-
-Ticket booked Successfully!
-
+1. PROJECT TITLE
+Ticket Booking Management System Using a Singly Linked List in C++
+
+2. AIM
+To develop a Ticket Booking Management System using a Singly Linked List in C++ to book tickets, display ticket details, search for a ticket, and cancel a ticket using dynamic memory allocation.
+
+3. OBJECTIVES
+1)To understand the concept of a Singly Linked List.
+2) To implement dynamic memory allocation in C++.
+3) To store passenger details using linked list nodes.
+4)To generate unique ticket numbers automatically.
+5) To implement ticket booking and display operations.
+6) To search for a ticket using its ticket number.
+7) To cancel a ticket by deleting its corresponding node.
+8)To understand the practical application of data structures in ticket management systems.
+
+
+4. ALGORITHM
+Step 1: Start the program.
+Step 2: Define a node structure containing the ticket number, passenger name, destination, and pointer to the next node.
+Step 3: Initialize the head pointer to NULL and the ticket number counter to 1.
+Step 4: Display the menu:
+•Book Ticket
 •Display Tickets
-
-Enter your Choice: 2
-
------ Ticket Details -----
-
-Ticket No: 101
-Passenger: Sonal
-Destination: Pune
-
 •Search Ticket
-
-Enter your Choice: 3
-
-Enter Ticket Number to search: 101
-
-Ticket Found!
-Passenger: Sonal
-Destination: Pune
-
 •Cancel Ticket
-
-Enter your Choice: 4
-
-Enter Ticket Number to cancel: 101
-
-Ticket cancelled Successfully!
-
 •Exit
+Step 5: Accept the user's choice.
+Step 6: If the choice is 1 — Book Ticket
+•Create a new node.
+•Generate a unique ticket number automatically.
+•Accept the passenger name and destination.
+•Insert the node at the end of the linked list.
+•Display the booking confirmation and ticket number.
+Step 7: If the choice is 2 — Display Tickets
+•Check whether the linked list is empty.
+•If empty, display a message.
+•Otherwise, traverse the linked list and display all ticket details.
+Step 8: If the choice is 3 — Search Ticket
+•Accept the ticket number to search.
+•Traverse the linked list.
+•If the ticket is found, display its details.
+•Otherwise, display "Ticket Not Found".
+Step 9: If the choice is 4 — Cancel Ticket
+•Accept the ticket number to cancel.
+•Search for the ticket in the linked list.
+•If found, delete the corresponding node.
+•Otherwise, display "Ticket Not Found".
+Step 10: If the choice is 5, display a thank-you message and terminate the program.
+Step 11: Repeat Steps 4–10 until the user selects Exit.
+Step 12: Stop.
 
-Enter your Choice: 5
-
-Exiting program...
+5. FLOWCHART
 
 
-5. Conclusion
-
-The Ticket Booking System successfully demonstrates the use of a singly linked list in C++. It provides basic operations such as booking, displaying, searching, and cancelling tickets.
-
-This project helps us understand pointers, nodes, dynamic memory allocation, traversal, insertion, and deletion. It also demonstrates how linked lists can be used to manage records dynamically.
-
-
----
-
+          +------------------+
+          |      START       |
+          +------------------+
+                   |
+                   v
+          +------------------+
+          | Initialize head  |
+          | head = NULL      |
+          | ticketNo = 1      |
+          +------------------+
+                   |
+                   v
+          +------------------+
+          |    Display Menu  |
+          +------------------+
+                   |
+                   v
+          +------------------+
+          |   Enter Choice   |
+          +------------------+
+                   |
+                   v
+          +------------------+
+          |  Check Choice    |
+          +------------------+
+             /   /  \   \
+            /   /    \   \
+           v   v      v   v
+        Book Display Search Cancel
+           |    |      |    |
+           v    v      v    v
+        Create Show   Find  Find
+        New Node All  Ticket Ticket
+           |    |      |    |
+           v    |      v    v
+        Insert   |   Found? Found?
+        at End   |    |      |
+           |     |   Yes     Yes
+           |     |    |       |
+           |     |  Display  Delete
+           |     |  Details  Node
+           \     |    |       /
+            \    |    |      /
+             v   v    v     v
+          +------------------+
+          |   Display Menu   |
+          +------------------+
+                   |
+                   v
+          +------------------+
+          | Choice = 5 ?     |
+          +------------------+
+             |           |
+            No          Yes
+             |           |
+             |           v
+             |    +-------------+
+             |    |    STOP     |
+             |    +-------------+
+             |
+             +------> Menu
+ 
+6. CONCLUSION
+The Ticket Booking Management System was successfully developed using a Singly Linked List in C++. The system allows users to book tickets, display ticket details, search for tickets, and cancel bookings. Automatic ticket number generation and dynamic memory allocation make the system useful for understanding linked list operations. This project demonstrates the practical application of data structures in a ticket management system.
