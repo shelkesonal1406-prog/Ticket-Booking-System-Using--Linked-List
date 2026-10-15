@@ -148,34 +148,9 @@ Explanation: Each ticket requires one node, so the memory required increases wit
 
 •Destination: Mumbai
 
-
-•The linked list will look like this:
-
-HEAD
-   |
-   v
-+------------------+      +------------------+
-| 101 | Sonal      | ---> | 102 | Rahul      |
-| Pune             |      | Mumbai           |
-+------------------+      +------------------+
-                                    |
-                                    v
-                                   NULL
-
 •The user can display both tickets, search for a particular ticket, or cancel an existing ticket.
 
-•When ticket number 101 is cancelled, the resulting linked list is:
-
-HEAD
-   |
-   v
-+------------------+
-| 102 | Rahul      |
-| Mumbai           |
-+------------------+
-          |
-          v
-         NULL
+•When ticket number 101 is cancelled
 
 •Thus, the linked list is updated by changing pointers and deleting the cancelled node.
 
