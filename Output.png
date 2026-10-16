@@ -1,0 +1,145 @@
+===== TICKET BOOKING SYSTEM =====
+1. Book Ticket
+2. Display Tickets
+3. Search Ticket
+4. Cancel Ticket
+5. Exit
+
+Enter Your Choice: 1
+
+Enter Passenger Name: SONAL
+Enter Destination: PUNE
+
+Ticket Booked Successfully!
+Your Ticket Number: 1
+
+===== TICKET BOOKING SYSTEM =====
+1. Book Ticket
+2. Display Tickets
+3. Search Ticket
+4. Cancel Ticket
+5. Exit
+
+Enter Your Choice: 1
+
+Enter Passenger Name: SANIKA
+Enter Destination: SANGAMNER
+
+Ticket Booked Successfully!
+Your Ticket Number: 2
+
+===== TICKET BOOKING SYSTEM =====
+1. Book Ticket
+2. Display Tickets
+3. Search Ticket
+4. Cancel Ticket
+5. Exit
+
+Enter Your Choice: 2
+
+===== BOOKED TICKETS =====
+
+Ticket Number: 1
+Passenger Name: SONAL
+Destination: PUNE
+-------------------------
+
+Ticket Number: 2
+Passenger Name: SANIKA
+Destination: SANGAMNER
+-------------------------
+
+===== TICKET BOOKING SYSTEM =====
+1. Book Ticket
+2. Display Tickets
+3. Search Ticket
+4. Cancel Ticket
+5. Exit
+
+Enter Your Choice: 3
+
+Enter Ticket Number to Search: 2
+
+Ticket Found!
+Ticket Number: 2
+Passenger Name: SANIKA
+Destination: SANGAMNER
+
+===== TICKET BOOKING SYSTEM =====
+1. Book Ticket
+2. Display Tickets
+3. Search Ticket
+4. Cancel Ticket
+5. Exit
+
+Enter Your Choice: 4
+
+Enter Ticket Number to Cancel: 1
+
+Ticket Cancelled Successfully!
+
+===== TICKET BOOKING SYSTEM =====
+1. Book Ticket
+2. Display Tickets
+3. Search Ticket
+4. Cancel Ticket
+5. Exit
+
+Enter Your Choice: 2
+
+===== BOOKED TICKETS =====
+
+Ticket Number: 2
+Passenger Name: SANIKA
+Destination: SANGAMNER
+-------------------------
+
+===== TICKET BOOKING SYSTEM =====
+1. Book Ticket
+2. Display Tickets
+3. Search Ticket
+4. Cancel Ticket
+5. Exit
+
+Enter Your Choice: 5
+
+Thank You for Using Ticket Booking System!
+
+--------------------------------
+Process exited after 106.8 seconds with return value 0
+Press any key to continue . . .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
