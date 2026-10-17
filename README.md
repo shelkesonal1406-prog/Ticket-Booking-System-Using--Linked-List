@@ -1,7 +1,7 @@
 
 
 1. PROJECT TITLE:
-Develop a Ticket Booking Management System Using a Singly Linked List in C++
+Develop a Ticket Booking Management System Using a Singly Linked List 
 
 2. AIM:
 To develop a Ticket Booking Management System using a Singly Linked List in C++ to book tickets, display ticket details, search for a ticket, and cancel a ticket using dynamic memory allocation.
