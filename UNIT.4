@@ -1,0 +1,301 @@
+1. Title
+Develop Hospital Emergency Patient Prioritization System Using a Binary Heap Tree
+
+2. Problem Statement
+Develop a hospital emergency patient prioritization system using a Binary Min-Heap Tree. Assign priorities to patients based on the severity of their medical conditions. Implement insertion, deletion of the highest-priority patient, and display patients in priority order.
+
+3. Objectives
+  1.To study the concept of Binary Heap Tree.
+  2.To implement a Min-Heap using C++.
+  3.To insert patient records with different priorities.
+  4.To remove the highest-priority patient.
+  5.To display patient records according to priority.
+  6.To understand the practical applications of tree data structures.
+
+4.Introduction
+The Hospital Emergency Patient Prioritization System is a C++-based project that uses a Binary Min-Heap Tree to manage patients according to their emergency priorities.
+In this system, each patient is assigned a unique patient ID, name, and priority value. Priority 1 represents the highest priority, while priority 5 represents the lowest priority. The Min-Heap Tree ensures that the patient with the highest priority is available at the root node.
+The system supports operations such as insertion of patient records, deletion of the highest-priority patient, displaying the heap, and displaying patients in priority order. This project demonstrates the practical application of tree data structures and priority queues.
+
+
+4. Algorithm
+
+A. Insertion
+    1.Start.
+    2.Read the patient ID, name, and priority.
+    3.Check whether the heap is full.
+    4.Insert the new patient at the end of the heap.
+    5.Compare the new node with its parent node.
+    6.Swap the nodes if the new node has a smaller priority value.
+    7.Repeat until the Min-Heap property is satisfied.
+    8.Display the success message.
+    9.Stop.
+B. Deletion
+    1.Start.
+    2.Check whether the heap is empty.
+    3.If empty, display a message and stop.
+    4.Display the root patient with the highest priority.
+    5.Replace the root node with the last node.
+    6.Reduce the heap size by one.
+    7.Perform Heapify Down to restore the Min-Heap property.
+    8.Stop.
+C. Display Patients in Priority Order
+    1.Start.
+    2.Check whether the heap is empty.
+    3.Create a copy of the heap.
+    4.Display the root patient of the copied heap.
+    5.Remove the root and perform Heapify Down.
+    6.Repeat until the copied heap becomes empty.
+    7.Stop.
+
+
+5.Program
+#include <iostream>
+#include <string>
+using namespace std;
+
+const int MAX_PATIENTS = 100;
+
+struct Patient
+{
+    int patientID;
+    string name;
+    int priority; // 1 = highest priority, 5 = lowest priority
+};
+
+class MinHeap
+{
+private:
+    Patient heap[MAX_PATIENTS];
+    int size;
+
+    void swapPatients(Patient &a, Patient &b)
+    {
+        Patient temp = a;
+        a = b;
+        b = temp;
+    }
+
+    void heapifyUp(int index)
+    {
+        while (index > 0)
+        {
+            int parent = (index - 1) / 2;
+            if (heap[index].priority < heap[parent].priority)
+            {
+                swapPatients(heap[index], heap[parent]);
+                index = parent;
+            }
+            else
+                break;
+        }
+    }
+
+    void heapifyDown(int index)
+    {
+        while (true)
+        {
+            int left = 2 * index + 1;
+            int right = 2 * index + 2;
+            int smallest = index;
+
+            if (left < size && heap[left].priority < heap[smallest].priority)
+                smallest = left;
+
+            if (right < size && heap[right].priority < heap[smallest].priority)
+                smallest = right;
+
+            if (smallest != index)
+            {
+                swapPatients(heap[index], heap[smallest]);
+                index = smallest;
+            }
+            else
+                break;
+        }
+    }
+
+public:
+    MinHeap() { size = 0; }
+
+    bool isEmpty() { return size == 0; }
+
+    void insertPatient(int id, string patientName, int patientPriority)
+    {
+        if (size == MAX_PATIENTS)
+        {
+            cout << "Heap is full. Cannot add more patients.\n";
+            return;
+        }
+
+        if (patientPriority < 1 || patientPriority > 5)
+        {
+            cout << "Invalid priority! Enter a value from 1 to 5.\n";
+            return;
+        }
+
+        Patient newPatient;
+        newPatient.patientID = id;
+        newPatient.name = patientName;
+        newPatient.priority = patientPriority;
+
+        heap[size] = newPatient;
+        heapifyUp(size);
+        size++;
+        cout << "Patient added successfully.\n";
+    }
+
+    void serveHighestPriorityPatient()
+    {
+        if (isEmpty())
+        {
+            cout << "No patients in the queue.\n";
+            return;
+        }
+
+        cout << "\nPatient being attended first:\n";
+        cout << "ID: " << heap[0].patientID
+             << " | Name: " << heap[0].name
+             << " | Priority: " << heap[0].priority << "\n";
+
+        heap[0] = heap[size - 1];
+        size--;
+        if (size > 0)
+            heapifyDown(0);
+
+        cout << "Patient removed from the heap.\n";
+    }
+
+    void displayHeap()
+    {
+        if (isEmpty())
+        {
+            cout << "No patients in the heap.\n";
+            return;
+        }
+
+        cout << "\nCurrent Heap (level-order / array representation):\n";
+        cout << "ID\tName\t\tPriority\n";
+        for (int i = 0; i < size; i++)
+        {
+            cout << heap[i].patientID << "\t"
+                 << heap[i].name << "\t\t"
+                 << heap[i].priority << "\n";
+        }
+
+        cout << "\nTree Structure by Levels:\n";
+        int index = 0, level = 0, nodesAtLevel = 1;
+        while (index < size)
+        {
+            cout << "Level " << level << ": ";
+            int count = 0;
+            while (count < nodesAtLevel && index < size)
+            {
+                cout << "[" << heap[index].name
+                     << " | P" << heap[index].priority << "] ";
+                index++;
+                count++;
+            }
+            cout << "\n";
+            nodesAtLevel *= 2;
+            level++;
+        }
+        cout << "\nNote: Priority 1 is the highest priority.\n";
+    }
+
+    void displayPriorityOrder()
+    {
+        if (isEmpty())
+        {
+            cout << "No patients in the heap.\n";
+            return;
+        }
+
+        MinHeap copy = *this; // Preserve the original heap
+        cout << "\nPatients in Priority Order (1 = highest):\n";
+        cout << "ID\tName\t\tPriority\n";
+
+        while (!copy.isEmpty())
+        {
+            Patient top = copy.heap[0];
+            cout << top.patientID << "\t"
+                 << top.name << "\t\t"
+                 << top.priority << "\n";
+
+            copy.heap[0] = copy.heap[copy.size - 1];
+            copy.size--;
+            if (copy.size > 0)
+                copy.heapifyDown(0);
+        }
+    }
+};
+
+int main()
+{
+    MinHeap hospital;
+    int choice, id, priority;
+    string name;
+
+    do
+    {
+        cout << "\n===== HOSPITAL EMERGENCY PRIORITY SYSTEM =====\n";
+        cout << "1. Add Patient\n";
+        cout << "2. Attend Highest-Priority Patient\n";
+        cout << "3. Display Heap and Tree Levels\n";
+        cout << "4. Display Patients in Priority Order\n";
+        cout << "5. Exit\n";
+        cout << "Enter your choice: ";
+
+        if (!(cin >> choice))
+        {
+            cout << "Invalid input. Program closing.\n";
+            return 0;
+        }
+
+        switch (choice)
+        {
+        case 1:
+            cout << "Enter patient ID: ";
+            cin >> id;
+            cout << "Enter patient name (one word): ";
+            cin >> name;
+            cout << "Enter priority (1 = critical, 2 = urgent, "
+                 << "3 = moderate, 4 = minor, 5 = least urgent): ";
+            cin >> priority;
+            hospital.insertPatient(id, name, priority);
+            break;
+
+        case 2:
+            hospital.serveHighestPriorityPatient();
+            break;
+
+        case 3:
+            hospital.displayHeap();
+            break;
+
+        case 4:
+            hospital.displayPriorityOrder();
+            break;
+
+        case 5:
+            cout << "Exiting program. Thank you!\n";
+            break;
+
+        default:
+            cout << "Invalid choice. Please select 1 to 5.\n";
+        }
+    } while (choice != 5);
+
+    return 0;
+}
+
+
+6.Result
+
+The Hospital Emergency Patient Prioritization System was successfully implemented using a Binary Min-Heap Tree in C++. The program performs insertion, deletion, heapification, and display operations efficiently.
+It successfully organizes patient records according to their priority values and identifies the highest-priority patient at the root node. Thus, the project demonstrates the effective use of a Binary Heap Tree for priority-based patient management.
+
+
+7.Conclusion
+
+The Hospital Emergency Patient Prioritization System was successfully developed using a Binary Min-Heap Tree in C++. The system efficiently manages patient records according to their emergency priority levels. It performs insertion, deletion, and display operations while maintaining the Min-Heap property. This project demonstrates the practical application of tree data structures and priority queues in hospital emergency management.
