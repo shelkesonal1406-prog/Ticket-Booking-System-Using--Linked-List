@@ -1,0 +1,43 @@
+1. Title
+Develop Hospital Emergency Patient Prioritization System Using a Binary Heap Tree
+
+2. Problem Statement
+Develop a hospital emergency patient prioritization system using a Binary Min-Heap Tree. Assign priorities to patients based on the severity of their medical conditions. Implement insertion, deletion of the highest-priority patient, and display patients in priority order.
+
+3. Objectives
+1.To study the concept of Binary Heap Tree.
+2.To implement a Min-Heap using C++.
+3.To insert patient records with different priorities.
+4.To remove the highest-priority patient.
+5.To display patient records according to priority.
+6.To understand the practical applications of tree data structures.
+
+4. Algorithm
+
+A. Insertion
+    1.Start.
+    2.Read the patient ID, name, and priority.
+    3.Check whether the heap is full.
+    4.Insert the new patient at the end of the heap.
+    5.Compare the new node with its parent node.
+    6.Swap the nodes if the new node has a smaller priority value.
+    7.Repeat until the Min-Heap property is satisfied.
+    8.Display the success message.
+    9.Stop.
+B. Deletion
+    1.Start.
+    2.Check whether the heap is empty.
+    3.If empty, display a message and stop.
+    4.Display the root patient with the highest priority.
+    5.Replace the root node with the last node.
+    6.Reduce the heap size by one.
+    7.Perform Heapify Down to restore the Min-Heap property.
+    8.Stop.
+C. Display Patients in Priority Order
+    1.Start.
+    2.Check whether the heap is empty.
+    3.Create a copy of the heap.
+    4.Display the root patient of the copied heap.
+    5.Remove the root and perform Heapify Down.
+    6.Repeat until the copied heap becomes empty.
+    7.Stop.
