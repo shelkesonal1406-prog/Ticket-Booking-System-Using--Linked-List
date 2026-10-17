@@ -7,14 +7,14 @@ Develop a Ticket Booking Management System Using a Singly Linked List in C++
 To develop a Ticket Booking Management System using a Singly Linked List in C++ to book tickets, display ticket details, search for a ticket, and cancel a ticket using dynamic memory allocation.
 
 3. OBJECTIVES:
-1)To understand the concept of a Singly Linked List.
+1) To understand the concept of a Singly Linked List.
 2) To implement dynamic memory allocation in C++.
 3) To store passenger details using linked list nodes.
-4)To generate unique ticket numbers automatically.
+4) To generate unique ticket numbers automatically.
 5) To implement ticket booking and display operations.
 6) To search for a ticket using its ticket number.
 7) To cancel a ticket by deleting its corresponding node.
-8)To understand the practical application of data structures in ticket management systems.
+8) To understand the practical application of data structures in ticket management systems.
 
 
 4. ALGORITHM:
