@@ -20,34 +20,119 @@ The system supports operations such as insertion of patient records, deletion of
 
 4. Algorithm
 
-A. Insertion
-    1.Start.
-    2.Read the patient ID, name, and priority.
-    3.Check whether the heap is full.
-    4.Insert the new patient at the end of the heap.
-    5.Compare the new node with its parent node.
-    6.Swap the nodes if the new node has a smaller priority value.
-    7.Repeat until the Min-Heap property is satisfied.
-    8.Display the success message.
-    9.Stop.
-B. Deletion
-    1.Start.
-    2.Check whether the heap is empty.
-    3.If empty, display a message and stop.
-    4.Display the root patient with the highest priority.
-    5.Replace the root node with the last node.
-    6.Reduce the heap size by one.
-    7.Perform Heapify Down to restore the Min-Heap property.
-    8.Stop.
-C. Display Patients in Priority Order
-    1.Start.
-    2.Check whether the heap is empty.
-    3.Create a copy of the heap.
-    4.Display the root patient of the copied heap.
-    5.Remove the root and perform Heapify Down.
-    6.Repeat until the copied heap becomes empty.
-    7.Stop.
+Algorithm: Hospital Emergency Patient Prioritization System Using Binary Min-Heap Tree
 
+Step 1: Start.
+
+Step 2: Initialize an empty Min-Heap.
+
+Step 3: Display the menu:
+
+1. Add Patient
+
+
+2. Attend Highest-Priority Patient
+
+
+3. Display Heap
+
+
+4. Display Patients in Priority Order
+
+
+5. Exit
+
+
+
+Step 4: Accept the user's choice.
+
+Step 5: Perform the selected operation:
+
+If choice = 1 (Add Patient):
+
+1. Enter Patient ID, Name, and Priority.
+
+
+2. Check whether the heap is full.
+
+
+3. Validate the priority value (1–5).
+
+
+4. Insert the patient into the Min-Heap.
+
+
+5. Apply heapify-up to maintain the Min-Heap property.
+
+
+6. Display the success message.
+
+
+
+If choice = 2 (Attend Highest-Priority Patient):
+
+1. Check whether the heap is empty.
+
+
+2. If empty, display "No patients in the queue."
+
+
+3. Otherwise, remove the root patient.
+
+
+4. Apply heapify-down to maintain the Min-Heap property.
+
+
+5. Display the removed patient's information.
+
+
+
+If choice = 3 (Display Heap):
+
+1. Check whether the heap is empty.
+
+
+2. If empty, display "No patients in the heap."
+
+
+3. Otherwise, display the heap and its tree structure.
+
+
+
+If choice = 4 (Display Patients in Priority Order):
+
+1. Check whether the heap is empty.
+
+
+2. If empty, display "No patients in the heap."
+
+
+3. Otherwise, create a copy of the heap.
+
+
+4. Repeatedly remove the root from the copied heap.
+
+
+5. Display patients in priority order.
+
+
+
+If choice = 5 (Exit):
+
+1. Display "Exiting system."
+
+
+2. Stop.
+
+
+
+
+Step 6: If the choice is invalid, display "Invalid choice."
+
+Step 7: Return to the menu and repeat the process until the user selects Exit.
+
+Step 8: Stop.
+    
 
 5.Program
 #include <iostream>
