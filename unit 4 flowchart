@@ -1,0 +1,24 @@
+             START
+               |
+        Display Main Menu
+               |
+        Enter User Choice
+               |
+        +------+------+
+        |      |      |
+       Add   Delete  Display
+     Patient Patient Patients
+        |      |      |
+      Insert  Remove  Display
+      Patient Root    Records
+        |      |      |
+     Heapify Heapify  |
+       Up     Down    |
+        |      |      |
+        +------+------+
+               |
+        Display Main Menu
+               |
+          Exit Choice?
+               |
+              END
