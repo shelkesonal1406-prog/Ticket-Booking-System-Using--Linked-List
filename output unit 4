@@ -1,0 +1,63 @@
+OUTPUT
+
+===== Hospital Emergency Patient Prioritization System =====
+
+1. Add Patient
+2. Attend Highest-Priority Patient
+3. Display Heap
+4. Display Patients in Priority Order
+5. Exit
+
+Enter your choice: 1
+
+Enter Patient ID: 101
+Enter Patient Name: Rahul
+Enter Priority (1-5): 2
+
+Patient added successfully!
+
+Enter your choice: 1
+
+Enter Patient ID: 102
+Enter Patient Name: Priya
+Enter Priority (1-5): 1
+
+Patient added successfully!
+
+Enter your choice: 3
+
+Patients in Min-Heap:
+
+Patient ID: 102
+Name: Priya
+Priority: 1
+
+Patient ID: 101
+Name: Rahul
+Priority: 2
+
+Enter your choice: 2
+
+Highest-Priority Patient:
+
+Patient ID: 102
+Name: Priya
+Priority: 1
+
+Patient removed from the heap.
+
+Enter your choice: 4
+
+Patients in Priority Order:
+
+Patient ID: 101
+Name: Rahul
+Priority: 2
+
+Enter your choice: 5
+
+Exiting system...
+
+Program terminated successfully.
+
+
